@@ -18,16 +18,21 @@ $(document).ready(function () {
         myAccount = accounts[0];
       });
     }
-    const productRegistryContractAddress =
-      "0x1552900c0Dfa1A446e7C0337bb2B85bA85BED458";
+    // const productRegistryContractAddress =
+    //   "0x1552900c0Dfa1A446e7C0337bb2B85bA85BED458";
+    const productRegistryContractAddress = "0x67463F028968C5b365030fb14B5F9BB5A46145E1";
     const contract = new web3.eth.Contract(
       productRegistryContractABI,
       productRegistryContractAddress
     );
   
     $("#register-tab").click(function () {
-      showTable();
+      // showTable();
     });
+  
+    $("#verify-tab").click(function () {
+      showTable();
+    });  
   
     $("#btnRegisterProduct").click(registerProduct);
   
@@ -146,147 +151,147 @@ $(document).ready(function () {
   });
   const productRegistryContractABI = [
     {
-      inputs: [],
-      stateMutability: "nonpayable",
-      type: "constructor",
-    },
-    {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_initNumber",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_initNumber",
+          "type": "uint256"
         },
         {
-          internalType: "string",
-          name: "_productName",
-          type: "string",
+          "internalType": "string",
+          "name": "_productName",
+          "type": "string"
         },
         {
-          internalType: "string",
-          name: "_location",
-          type: "string",
-        },
+          "internalType": "string",
+          "name": "_location",
+          "type": "string"
+        }
       ],
-      name: "addProduct",
-      outputs: [],
-      stateMutability: "nonpayable",
-      type: "function",
+      "name": "addProduct",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
     },
     {
-      inputs: [],
-      name: "getAllProducts",
-      outputs: [
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "getAllProducts",
+      "outputs": [
         {
-          components: [
+          "components": [
             {
-              internalType: "uint256",
-              name: "number",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "number",
+              "type": "uint256"
             },
             {
-              internalType: "string",
-              name: "productName",
-              type: "string",
+              "internalType": "string",
+              "name": "productName",
+              "type": "string"
             },
             {
-              internalType: "string",
-              name: "location",
-              type: "string",
+              "internalType": "string",
+              "name": "location",
+              "type": "string"
             },
             {
-              internalType: "uint256",
-              name: "timestamp",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            }
           ],
-          internalType: "struct agricultureContract.Product[]",
-          name: "",
-          type: "tuple[]",
-        },
+          "internalType": "struct agricultureContract.Product[]",
+          "name": "",
+          "type": "tuple[]"
+        }
       ],
-      stateMutability: "view",
-      type: "function",
+      "stateMutability": "view",
+      "type": "function"
     },
     {
-      inputs: [],
-      name: "getNumOfProducts",
-      outputs: [
+      "inputs": [],
+      "name": "getNumOfProducts",
+      "outputs": [
         {
-          internalType: "uint8",
-          name: "",
-          type: "uint8",
-        },
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
       ],
-      stateMutability: "view",
-      type: "function",
+      "stateMutability": "view",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_index",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "_index",
+          "type": "uint256"
+        }
       ],
-      name: "getProduct",
-      outputs: [
+      "name": "getProduct",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         },
         {
-          internalType: "string",
-          name: "",
-          type: "string",
+          "internalType": "string",
+          "name": "",
+          "type": "string"
         },
         {
-          internalType: "string",
-          name: "",
-          type: "string",
+          "internalType": "string",
+          "name": "",
+          "type": "string"
         },
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "view",
-      type: "function",
+      "stateMutability": "view",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      name: "products",
-      outputs: [
+      "name": "products",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "number",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "number",
+          "type": "uint256"
         },
         {
-          internalType: "string",
-          name: "productName",
-          type: "string",
+          "internalType": "string",
+          "name": "productName",
+          "type": "string"
         },
         {
-          internalType: "string",
-          name: "location",
-          type: "string",
+          "internalType": "string",
+          "name": "location",
+          "type": "string"
         },
         {
-          internalType: "uint256",
-          name: "timestamp",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "view",
-      type: "function",
-    },
+      "stateMutability": "view",
+      "type": "function"
+    }
   ];
